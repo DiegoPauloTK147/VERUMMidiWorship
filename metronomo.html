@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midi Worship - Intro Reverse</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+ </head>
+
+
+
+
+<body class="format__basic">
+    <header class="itens_header">
+        <img src="image/logo.png">
+        <a href="index.html" class="botao_voltar">Voltar para Home</a>
+    </header>
+
+
+
+    <main>
+        <div class="ajust_centro_index">
+            <div class="cor">
+            <h1 class="ajust_bpm">40</h1>
+
+            <input type="range" min="40" max="300" class="estilo" value="40" id="bpm"/>
+
+            <audio src="sonds/CLIQUE.wav"></audio>
+        <div class="format_metro">        
+            <button class="botao_metronomo" id="play">Play</button>
+        </div>
+                <script>
+                    const bpm = document.getElementById('bpm');
+                    const h1  = document.querySelector('h1')
+                    const play = document.getElementById('play')
+                    const audio = document.querySelector('audio')
+
+                    let currentBpm = 40
+                    let isPlaying = false
+                    let timer = null
+
+                    
+                    function tick(){
+                        audio.currentTime = 0
+                        audio.play().loop = true
+
+                    }
+
+                    bpm.addEventListener('change', function(){
+                        h1.innerHTML = this.value + ' bpm'
+                        currentBpm = parseInt(this.value)
+                        if(isPlaying){
+                            clearInterval(timer)
+                            timer = setInterval(tick, (60*1000)/currentBpm)
+
+                        }
+
+                    })
+                    play.addEventListener('click', function(){
+                        if(isPlaying){
+                            clearInterval(timer)
+                            play.innerHTML = 'Play'
+                        }
+                        else{
+                            play.innerHTML = 'Stop'
+                            tick()
+                            timer = setInterval(tick, (60*1000)/currentBpm)
+                        } 
+                        isPlaying = !isPlaying
+
+
+                    })
+
+
+                </script>
+
+
+
+
+            </div>
+
+        </div>
+    </main>
+
+<footer class="footer">
+    <div class="ajust_footer">Anuncior</div>
+</footer>
+
+</body>
+</html>
