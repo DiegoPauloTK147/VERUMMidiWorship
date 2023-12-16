@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&display=swap');
+
+.background {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    background-color: black;
+
+}
+
+.ajust_background{
+    background-color: black;
+}
+
+.ajust_centro {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    background-color: black;
+    margin: 10px;   
+    
+}
+
+.sessao1 {
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    border: 5px solid red;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+}
+
+.botao {
+    background-color: green;
+    position:relative ;
+    color: aliceblue;
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+    padding: 10px;
+    size: 10px;
+    text-decoration: none;
+
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+}
+
+.ajust_footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+    background-color: grey;
+    width: 900px;
+    height: 200px;
+}
+
+@media (max-width: 600px) {
+   
+    .ajust_centro {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        background-color: black;
+        margin: 10px;
+        text-align: center;
+        align-items: center;
+        
+    }
+
+
+  }
